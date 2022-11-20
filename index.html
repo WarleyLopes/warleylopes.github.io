@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Test Automation Dashboard</title>
+</head>
+
+<body>
+    <!-- Definition of page header -->
+    <header class="index_header">
+        <h1>Test Automation Dashboard</h1>
+    </header>
+    <!-- Definition of left navigation -->
+    <!-- <nav class="nav_menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>-->
+    <!-- Definition of main content -->
+    <main class="index_main">
+        <p>Test Automation Dashboard is a web application that provides a dashboard for test automation results.
+            Each row is clickable and shows details of the test execution with additional multimedia evidence.
+        </p>
+
+        <div class = "search_components">
+
+        <label for="start">Start date:</label>
+
+        <input type="date" id="start_filter" name="search-start">
+
+        <label for="end">End date:</label>
+
+        <input type="date" id="end_filter" name="search-end">
+
+        <label for="passed">Filter only passed:</label>
+
+        <input type="checkbox" id="passed" name="search-passed">
+
+        <label for="failed">Filter only failed:</label>
+
+        <input type="checkbox" id="failed" name="search-failed">
+
+        </div>
+        
+
+        <!-- Definition of Test Automation Execution Records table -->
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col">Id</th>
+                        <th class="col">Name</th>
+                        <th class="col">Start Date</th>
+                        <th class="col">Start Time</th>
+                        <th class="col">End Date</th>
+                        <th class="col">End Time</th>
+                        <th class="col">Test Cases</th>
+                        <th class="col">Passed</th>
+                        <th class="col">Failed</th>
+                        <th class="col">Skipped</th>
+                        <th class="col">Blocked</th>
+                        <th class="col">Not Executed</th>
+                        <th class="col">Passed</th>
+                    </tr>
+                </thead>
+                <tbody id="testSuiteTable">
+                </tbody>
+
+            </table>
+            <span id="PreeValue" class="arrows">&#8617;</span>
+            <span id="nextValue" class="arrows">&#8618;</span>
+        </div>
+
+        <!-- Definition of Test Case List Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="closeModal">&times;</span>
+                <div id="modalData">
+                    <div class="table">
+                        <p id="testCasesParagraph"></p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="col">Id</th>
+                                    <th class="col">Name</th>
+                                    <th class="col">Start Date</th>
+                                    <th class="col">Start Time</th>
+                                    <th class="col">End Date</th>
+                                    <th class="col">End Time</th>
+                                    <th class="col">Steps Count</th>
+                                    <th class="col">Passed</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testCaseTable">
+                            </tbody>
+                        </table>
+                        <span id="PreeValueTC" class="arrows">&#8617;</span>
+                        <span id="nextValueTC" class="arrows">&#8618;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Definition of Test Case Details Modal -->
+        <div id="myModalTestCaseDetails" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="closeModalTestCaseDetails">&times;</span>
+                <div id="modalDataTestCaseDetails">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Definition of page footer -->
+    <footer class="index_footer">
+        <p>Created by: <a href="https://github.com/WarleyLopes">Warley Lopes</a></p>
+    </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="module" src="./scripts/main.js" defer></script>
+
+</html>
